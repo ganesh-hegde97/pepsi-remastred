@@ -28,7 +28,7 @@
 						suscipit illum illo libero? Perferendis, voluptatem
 						doloremque. Maiores!
 					</p>
-					<a href="#">View all Products</a>
+					<a href="#" class="btn">View all Products</a>
 				</div>
 				<div class="imgBox">
 					<img src="./images/pepsi001.png" alt="item" class="pepsi" />
@@ -39,21 +39,21 @@
 					<img
 						src="./images/pepsi001.png"
 						alt="item1"
-						onclick="imgSlider('./images/pepsi001.png'); changeBgColor('#0062be')"
+						onclick="imgSlider('./images/pepsi001.png'); changeBgColor('#0062be'); changeBtnBg('#111', '#fff')"
 					/>
 				</li>
 				<li>
 					<img
 						src="./images/pepsi002.png"
 						alt="item2"
-						onclick="imgSlider('./images/pepsi002.png'); changeBgColor('#CF1B27')"
+						onclick="imgSlider('./images/pepsi002.png'); changeBgColor('#CF1B27'); changeBtnBg('#111', '#fff')"
 					/>
 				</li>
 				<li>
 					<img
 						src="./images/pepsi003.png"
 						alt="item3"
-						onclick="imgSlider('./images/pepsi003.png'); changeBgColor('#1e1e1e')"
+						onclick="imgSlider('./images/pepsi003.png'); changeBgColor('#1e1e1e'); changeBtnBg('#fff', '#111'); changeBtnShadow('0px 0px 15px 0px rgba(255,255,255,0.60)')"
 					/>
 				</li>
 			</ul>
@@ -75,15 +75,26 @@
 				</li>
 			</ul>
 		</section>
-    </body>
-    <script type="text/javascript">
-        function imgSlider(anything) {
-            document.querySelector(".pepsi").src = anything;
-        }
+	</body>
+	<script type="text/javascript">
+		function imgSlider(anything) {
+			document.querySelector(".pepsi").src = anything;
+		}
 
-        function changeBgColor(color) {
-            const section = document.querySelector(".sec");
-            section.style.background = color;
-        }
-    </script>
+		function changeBgColor(color) {
+			const section = document.querySelector(".sec");
+			section.style.background = color;
+		}
+
+		function changeBtnBg(back, color) {
+			const content = document.querySelector(".content .textBox a");
+			content.style.background = back;
+			content.style.color = color;
+		}
+
+		// function changeBtnShadow(shadow) {
+		// 	const box = document.querySelector(".btn");
+		// 	box.style.boxShadow = shadow;
+		// }
+	</script>
 </html>
